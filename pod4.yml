@@ -1,0 +1,12 @@
+kind: Pod    # Pod is the object here                          
+apiVersion: v1              # Generally version is 1       
+metadata:                      #     If you want to give any name about the pod then do it inside the metadata
+  name: testpod4
+  annotations:
+     description: This is my second pod, created by Ayodeji for learning purposes.                 
+spec:                                    
+  containers:                      
+    - name: c01    # Name of my container                 
+      image: httpd           # Image of httpd
+      ports:
+       - containerPort: 80 

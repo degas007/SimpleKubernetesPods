@@ -1,0 +1,18 @@
+kind: Pod    # Pod is the object here                          
+apiVersion: v1              # Generally version is 1       
+metadata:                      #     If you want to give any name about the pod then do it inside the metadata
+  name: secondpod 
+  annotations:
+     description: This is my second pod, created by Ayodeji for learning purposes.                 
+spec:                                    
+  containers:                      
+    - name: c01    # Name of my container                 
+      image: ubuntu           # Image of Ubuntu   
+      command: ["/bin/bash", "-c", "while true; do echo This is my first container; sleep 5 ; done"]
+    - name: c02
+      image: ubuntu
+      command: ["/bin/bash", "-c", "while true; do echo This is my second container; sleep 5 ; done"]
+      env:
+       - name: City
+         value: Gutersloh
+  restartPolicy: Never         # Defaults to Always
